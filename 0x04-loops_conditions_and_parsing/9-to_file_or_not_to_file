@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#script displays home directory and user id for each line of /etc/passwd.
+
+input="/etc/passwd"
+while IFS= read -r line
+do
+   echo "$line" | cut -d':' --fields=1,3,6
+done < "$input"
